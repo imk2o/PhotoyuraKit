@@ -9,6 +9,11 @@
 import UIKit
 import Photos
 
+public struct SystemPhotoAlbumLoadOptions: PhotoAlbumLoadOptions {
+    public init() {
+    }
+}
+
 struct SystemPhotoAlbumContentsLoader: PhotoAlbumContentsLoader {
     private let album: SystemPhotoAlbum
     

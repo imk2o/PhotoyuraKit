@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B1D951551E6BB1D5006D1E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951541E6BB1D5006D1E5B /* AppDelegate.swift */; };
-		B1D951571E6BB1D5006D1E5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951561E6BB1D5006D1E5B /* ViewController.swift */; };
 		B1D9515A1E6BB1D5006D1E5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D951581E6BB1D5006D1E5B /* Main.storyboard */; };
 		B1D9515C1E6BB1D5006D1E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D9515B1E6BB1D5006D1E5B /* Assets.xcassets */; };
 		B1D9515F1E6BB1D5006D1E5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D9515D1E6BB1D5006D1E5B /* LaunchScreen.storyboard */; };
 		B1D951671E6BB26F006D1E5B /* PhotoyuraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D951661E6BB26F006D1E5B /* PhotoyuraKit.framework */; };
 		B1D951681E6BB26F006D1E5B /* PhotoyuraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D951661E6BB26F006D1E5B /* PhotoyuraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D951A21E7CDB65006D1E5B /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951A11E7CDB65006D1E5B /* LibraryViewController.swift */; };
+		B1D951A41E7CDC7B006D1E5B /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951A31E7CDC7B006D1E5B /* AlbumViewController.swift */; };
+		B1D951A61E7CDD3F006D1E5B /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951A51E7CDD3F006D1E5B /* AlbumPhotoCell.swift */; };
+		B1EFCFCF1E7D570A00C8708E /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFCFCE1E7D570A00C8708E /* ImageViewController.swift */; };
+		B1EFCFD11E7D69EA00C8708E /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFCFD01E7D69EA00C8708E /* LivePhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +75,17 @@
 /* Begin PBXFileReference section */
 		B1D951511E6BB1D5006D1E5B /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D951541E6BB1D5006D1E5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1D951561E6BB1D5006D1E5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1D951591E6BB1D5006D1E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1D9515B1E6BB1D5006D1E5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1D9515E1E6BB1D5006D1E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1D951601E6BB1D5006D1E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1D951661E6BB26F006D1E5B /* PhotoyuraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhotoyuraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D9516A1E6BB2A2006D1E5B /* PhotoyuraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhotoyuraKit.xcodeproj; path = ../PhotoyuraKit.xcodeproj; sourceTree = "<group>"; };
+		B1D951A11E7CDB65006D1E5B /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		B1D951A31E7CDC7B006D1E5B /* AlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		B1D951A51E7CDD3F006D1E5B /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
+		B1EFCFCE1E7D570A00C8708E /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		B1EFCFD01E7D69EA00C8708E /* LivePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +121,15 @@
 			isa = PBXGroup;
 			children = (
 				B1D951541E6BB1D5006D1E5B /* AppDelegate.swift */,
-				B1D951561E6BB1D5006D1E5B /* ViewController.swift */,
 				B1D951581E6BB1D5006D1E5B /* Main.storyboard */,
 				B1D9515B1E6BB1D5006D1E5B /* Assets.xcassets */,
 				B1D9515D1E6BB1D5006D1E5B /* LaunchScreen.storyboard */,
 				B1D951601E6BB1D5006D1E5B /* Info.plist */,
+				B1D951A11E7CDB65006D1E5B /* LibraryViewController.swift */,
+				B1D951A31E7CDC7B006D1E5B /* AlbumViewController.swift */,
+				B1D951A51E7CDD3F006D1E5B /* AlbumPhotoCell.swift */,
+				B1EFCFCE1E7D570A00C8708E /* ImageViewController.swift */,
+				B1EFCFD01E7D69EA00C8708E /* LivePhotoViewController.swift */,
 			);
 			path = "Example-iOS";
 			sourceTree = "<group>";
@@ -177,7 +189,7 @@
 					B1D951501E6BB1D5006D1E5B = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 427QQ329ZX;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -254,7 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D951571E6BB1D5006D1E5B /* ViewController.swift in Sources */,
+				B1D951A41E7CDC7B006D1E5B /* AlbumViewController.swift in Sources */,
+				B1D951A21E7CDB65006D1E5B /* LibraryViewController.swift in Sources */,
+				B1EFCFCF1E7D570A00C8708E /* ImageViewController.swift in Sources */,
+				B1EFCFD11E7D69EA00C8708E /* LivePhotoViewController.swift in Sources */,
+				B1D951A61E7CDD3F006D1E5B /* AlbumPhotoCell.swift in Sources */,
 				B1D951551E6BB1D5006D1E5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +406,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.imk2o.PhotoyuraKit.Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a466d7fe-54c4-47f7-97f9-08301d91bfee";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -398,7 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 427QQ329ZX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,6 +445,7 @@
 				B1D951651E6BB1D5006D1E5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

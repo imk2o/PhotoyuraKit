@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// コールバック等の結果を表現する。
+///
+/// - success: 成功した場合。その結果となる値を持つ。
+/// - failure: 失敗した場合。エラーを持つ。
 public enum Result<T, E: Swift.Error> {
     case success(T)
     case failure(E)

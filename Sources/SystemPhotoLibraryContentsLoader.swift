@@ -9,10 +9,15 @@
 import UIKit
 import Photos
 
-struct SystemPhotoLibraryContentsLoader: PhotoLibraryContentsLoader {
+public struct SystemPhotoLibraryLoadOptions: PhotoLibraryLoadOptions {
+    public init() {
+    }
+}
+
+public struct SystemPhotoLibraryContentsLoader: PhotoLibraryContentsLoader {
     private let library: SystemPhotoLibrary
     
-    init(library: PhotoLibrary) {
+    public init(library: PhotoLibrary) {
         guard let library = library as? SystemPhotoLibrary else {
             fatalError()		// FIXME
         }
@@ -20,7 +25,7 @@ struct SystemPhotoLibraryContentsLoader: PhotoLibraryContentsLoader {
         self.library = library
     }
     
-    func load(
+    public func load(
         with options: PhotoLibraryLoadOptions,
         completion handler: (Result<[PhotoAlbum], PhotoLibraryLoadError>) -> Void
     ) {
@@ -28,6 +33,8 @@ struct SystemPhotoLibraryContentsLoader: PhotoLibraryContentsLoader {
         
         let options = PHFetchOptions()
         photoAlbums += self.fetch(with: .album, subtype: .any, options: options)
+        photoAlbums += self.fetch(with: .smartAlbum, subtype: .any, options: options)
+        photoAlbums += self.fetch(with: .moment, subtype: .any, options: options)
 //        fetchAndAppend(.SmartAlbum, .SmartAlbumUserLibrary, options)
 //        fetchAndAppend(.SmartAlbum, .SmartAlbumFavorites, options)
 //        fetchAndAppend(.SmartAlbum, .SmartAlbumRecentlyAdded, options)

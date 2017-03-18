@@ -9,22 +9,40 @@
 import UIKit
 import Photos
 
-public struct SystemPhotoLibraryAuthorizationParameters {
+public struct SystemPhotoLibraryAuthorizationCredential: PhotoLibraryAuthorizationCredential {
+    public init() {
+    }
 }
 
-public struct SystemPhotoLibraryAuthorization {
-    func request(
-        with parameters: PhotoLibraryAuthorizationParameters,
+public struct SystemPhotoLibraryAuthorization: PhotoLibraryAuthorization {
+    public init() {
+    }
+    
+    public func request(
+        with credential: PhotoLibraryAuthorizationCredential,
         completion handler: @escaping (Result<PhotoLibrary, PhotoLibraryAuthorizationError>) -> Void
     ) {
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
-                handler(.success(SystemPhotoLibrary()))
+                DispatchQueue.main.async {
+                    handler(.success(SystemPhotoLibrary()))
+                }
             case .denied, .restricted, .notDetermined:
-                handler(.failure(.authorizationRequired))
+                DispatchQueue.main.async {
+                    handler(.failure(.authorizationRequired))
+                }
             }
         }
+    }
+}
+
+public extension SystemPhotoLibraryAuthorization {
+    public func request(completion handler: @escaping (Result<PhotoLibrary, PhotoLibraryAuthorizationError>) -> Void) {
+        return self.request(
+            with: SystemPhotoLibraryAuthorizationCredential(),
+            completion: handler
+        )
     }
 }
 

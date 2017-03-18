@@ -16,10 +16,17 @@ public enum PhotoType {
     case unknown
 }
 
+/// 写真を表現するモデル。
 public protocol Photo {
+    /// ID。
     var identifier: String { get }
+    /// 写真タイプ。
     var photoType: PhotoType { get }
+    /// 写真のURL。
     var url: URL? { get }
     
+    /// 写真内のコンテンツを読み込むローダを取得する。
+    ///
+    /// - Returns: ローダを返す。
     func loader() -> PhotoContentLoader
 }
