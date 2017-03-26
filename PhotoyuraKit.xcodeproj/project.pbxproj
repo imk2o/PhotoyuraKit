@@ -25,6 +25,19 @@
 		B1D951991E752418006D1E5B /* SystemPhotoLibraryContentsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951981E752418006D1E5B /* SystemPhotoLibraryContentsLoader.swift */; };
 		B1D9519B1E752846006D1E5B /* SystemPhotoAlbumContentsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9519A1E752846006D1E5B /* SystemPhotoAlbumContentsLoader.swift */; };
 		B1D9519D1E752BE4006D1E5B /* SystemPhotoContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9519C1E752BE4006D1E5B /* SystemPhotoContentLoader.swift */; };
+		B1E551CE1E8296EB0081676A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551CD1E8296EB0081676A /* Player.swift */; };
+		B1E551D01E8297140081676A /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551CF1E8297140081676A /* Script.swift */; };
+		B1E551D21E8297C80081676A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551D11E8297C80081676A /* Scene.swift */; };
+		B1E551D41E829B370081676A /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551D31E829B370081676A /* Stage.swift */; };
+		B1E551D61E829B560081676A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551D51E829B560081676A /* Presenter.swift */; };
+		B1E551D81E829D760081676A /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551D71E829D760081676A /* Time.swift */; };
+		B1E551DC1E829F1E0081676A /* PhotoAlbumScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551DB1E829F1E0081676A /* PhotoAlbumScript.swift */; };
+		B1E551DE1E829F3F0081676A /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551DD1E829F3F0081676A /* PhotoPresenter.swift */; };
+		B1E551E01E829FE20081676A /* PhotoAlbumStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551DF1E829FE20081676A /* PhotoAlbumStage.swift */; };
+		B1E551E21E839B390081676A /* PhotoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551E11E839B390081676A /* PhotoTransition.swift */; };
+		B1E551E41E839B460081676A /* PhotoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551E31E839B460081676A /* PhotoFilter.swift */; };
+		B1E551E61E85436C0081676A /* PhotoNodeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551E51E85436C0081676A /* PhotoNodeContext.swift */; };
+		B1E551E81E8544880081676A /* SceneContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E551E71E8544880081676A /* SceneContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +78,19 @@
 		B1D951981E752418006D1E5B /* SystemPhotoLibraryContentsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPhotoLibraryContentsLoader.swift; path = Sources/SystemPhotoLibraryContentsLoader.swift; sourceTree = "<group>"; };
 		B1D9519A1E752846006D1E5B /* SystemPhotoAlbumContentsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPhotoAlbumContentsLoader.swift; path = Sources/SystemPhotoAlbumContentsLoader.swift; sourceTree = "<group>"; };
 		B1D9519C1E752BE4006D1E5B /* SystemPhotoContentLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPhotoContentLoader.swift; path = Sources/SystemPhotoContentLoader.swift; sourceTree = "<group>"; };
+		B1E551CD1E8296EB0081676A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Sources/Player.swift; sourceTree = "<group>"; };
+		B1E551CF1E8297140081676A /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Script.swift; path = Sources/Script.swift; sourceTree = "<group>"; };
+		B1E551D11E8297C80081676A /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Sources/Scene.swift; sourceTree = "<group>"; };
+		B1E551D31E829B370081676A /* Stage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stage.swift; path = Sources/Stage.swift; sourceTree = "<group>"; };
+		B1E551D51E829B560081676A /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Sources/Presenter.swift; sourceTree = "<group>"; };
+		B1E551D71E829D760081676A /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Time.swift; path = Sources/Time.swift; sourceTree = "<group>"; };
+		B1E551DB1E829F1E0081676A /* PhotoAlbumScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAlbumScript.swift; path = Sources/PhotoAlbumScript.swift; sourceTree = "<group>"; };
+		B1E551DD1E829F3F0081676A /* PhotoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoPresenter.swift; path = Sources/PhotoPresenter.swift; sourceTree = "<group>"; };
+		B1E551DF1E829FE20081676A /* PhotoAlbumStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAlbumStage.swift; path = Sources/PhotoAlbumStage.swift; sourceTree = "<group>"; };
+		B1E551E11E839B390081676A /* PhotoTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoTransition.swift; path = Sources/PhotoTransition.swift; sourceTree = "<group>"; };
+		B1E551E31E839B460081676A /* PhotoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoFilter.swift; path = Sources/PhotoFilter.swift; sourceTree = "<group>"; };
+		B1E551E51E85436C0081676A /* PhotoNodeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoNodeContext.swift; path = Sources/PhotoNodeContext.swift; sourceTree = "<group>"; };
+		B1E551E71E8544880081676A /* SceneContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneContext.swift; path = Sources/SceneContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				B1D9518B1E750FEC006D1E5B /* Common */,
-				B1D9518E1E75131F006D1E5B /* Authorization */,
 				B1D9518C1E751013006D1E5B /* Loader */,
 				B1D9518D1E751037006D1E5B /* Model */,
-				B1D951951E752109006D1E5B /* System */,
+				B1E551CC1E8296130081676A /* Player */,
 				B1D951471E6BAE1B006D1E5B /* Supporting FIles */,
 			);
 			name = Sources;
@@ -163,9 +188,8 @@
 		B1D9518C1E751013006D1E5B /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				B1D9517D1E750C5A006D1E5B /* PhotoLibraryContentsLoader.swift */,
-				B1D951831E750DF3006D1E5B /* PhotoAlbumContentsLoader.swift */,
-				B1D951871E750ECF006D1E5B /* PhotoContentLoader.swift */,
+				B1E551DA1E829EDA0081676A /* Base */,
+				B1D951951E752109006D1E5B /* System */,
 			);
 			name = Loader;
 			sourceTree = "<group>";
@@ -180,14 +204,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		B1D9518E1E75131F006D1E5B /* Authorization */ = {
-			isa = PBXGroup;
-			children = (
-				B1D9518F1E751345006D1E5B /* PhotoLibraryAuthorization.swift */,
-			);
-			name = Authorization;
-			sourceTree = "<group>";
-		};
 		B1D951951E752109006D1E5B /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +213,45 @@
 				B1D9519C1E752BE4006D1E5B /* SystemPhotoContentLoader.swift */,
 			);
 			name = System;
+			sourceTree = "<group>";
+		};
+		B1E551CC1E8296130081676A /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				B1E551D91E829E980081676A /* Base */,
+				B1E551DB1E829F1E0081676A /* PhotoAlbumScript.swift */,
+				B1E551DD1E829F3F0081676A /* PhotoPresenter.swift */,
+				B1E551DF1E829FE20081676A /* PhotoAlbumStage.swift */,
+				B1E551E11E839B390081676A /* PhotoTransition.swift */,
+				B1E551E31E839B460081676A /* PhotoFilter.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		B1E551D91E829E980081676A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B1E551CD1E8296EB0081676A /* Player.swift */,
+				B1E551CF1E8297140081676A /* Script.swift */,
+				B1E551D11E8297C80081676A /* Scene.swift */,
+				B1E551D31E829B370081676A /* Stage.swift */,
+				B1E551D51E829B560081676A /* Presenter.swift */,
+				B1E551D71E829D760081676A /* Time.swift */,
+				B1E551E51E85436C0081676A /* PhotoNodeContext.swift */,
+				B1E551E71E8544880081676A /* SceneContext.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		B1E551DA1E829EDA0081676A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B1D9518F1E751345006D1E5B /* PhotoLibraryAuthorization.swift */,
+				B1D9517D1E750C5A006D1E5B /* PhotoLibraryContentsLoader.swift */,
+				B1D951831E750DF3006D1E5B /* PhotoAlbumContentsLoader.swift */,
+				B1D951871E750ECF006D1E5B /* PhotoContentLoader.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,16 +437,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D951801E750CE4006D1E5B /* Result.swift in Sources */,
+				B1E551E21E839B390081676A /* PhotoTransition.swift in Sources */,
 				B1D951881E750ECF006D1E5B /* PhotoContentLoader.swift in Sources */,
+				B1E551D21E8297C80081676A /* Scene.swift in Sources */,
+				B1E551D61E829B560081676A /* Presenter.swift in Sources */,
+				B1E551E81E8544880081676A /* SceneContext.swift in Sources */,
 				B1D9519D1E752BE4006D1E5B /* SystemPhotoContentLoader.swift in Sources */,
+				B1E551DE1E829F3F0081676A /* PhotoPresenter.swift in Sources */,
 				B1D951971E752150006D1E5B /* SystemPhotoLibraryAuthorization.swift in Sources */,
+				B1E551E01E829FE20081676A /* PhotoAlbumStage.swift in Sources */,
+				B1E551D81E829D760081676A /* Time.swift in Sources */,
 				B1D951901E751345006D1E5B /* PhotoLibraryAuthorization.swift in Sources */,
+				B1E551CE1E8296EB0081676A /* Player.swift in Sources */,
 				B1D951841E750DF3006D1E5B /* PhotoAlbumContentsLoader.swift in Sources */,
+				B1E551E41E839B460081676A /* PhotoFilter.swift in Sources */,
+				B1E551E61E85436C0081676A /* PhotoNodeContext.swift in Sources */,
 				B1D951921E751848006D1E5B /* PhotoLibrary.swift in Sources */,
+				B1E551D01E8297140081676A /* Script.swift in Sources */,
+				B1E551D41E829B370081676A /* Stage.swift in Sources */,
 				B1D9517E1E750C5A006D1E5B /* PhotoLibraryContentsLoader.swift in Sources */,
 				B1D951821E750D9D006D1E5B /* PhotoAlbum.swift in Sources */,
 				B1D951991E752418006D1E5B /* SystemPhotoLibraryContentsLoader.swift in Sources */,
 				B1D9519B1E752846006D1E5B /* SystemPhotoAlbumContentsLoader.swift in Sources */,
+				B1E551DC1E829F1E0081676A /* PhotoAlbumScript.swift in Sources */,
 				B1D951861E750E54006D1E5B /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
