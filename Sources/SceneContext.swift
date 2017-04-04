@@ -15,4 +15,8 @@ public struct SceneContext {
     public var size: CGSize {
         return self.scene.size
     }
+    
+    func node(_ node: Scene.Node) -> SKNode {
+        return self.scene.node(node)
+    }
 }

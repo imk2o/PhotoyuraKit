@@ -10,6 +10,5 @@ import UIKit
 
 public protocol Script {
     func stage() -> Stage
-    func nextPresenter() -> Presenter?
-    func previousPresenter() -> Presenter?
+    func presenter(forNext: Bool) -> Presenter?
 }

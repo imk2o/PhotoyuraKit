@@ -20,10 +20,12 @@ public enum PresenterLoadError: Error {
 }
 
 public protocol Presenter {
-    func duration(for: PresenterAction) -> CGFloat
+    typealias PerformCompletionHandler = () -> Void
+    
+    func duration(for: PresenterAction) -> TimeInterval
     
     func load(to: SceneContext, completion handler: @escaping (Result<PhotoNodeContext, PresenterLoadError>) -> Void) -> Any?
     func cancel(identifier: Any)
-    func perform(action: PresenterAction, node: PhotoNodeContext, in: SceneContext)
+    func perform(action: PresenterAction, node: PhotoNodeContext, in: SceneContext, completion: @escaping PerformCompletionHandler)
     func unload(node: PhotoNodeContext, from: SceneContext)
 }
