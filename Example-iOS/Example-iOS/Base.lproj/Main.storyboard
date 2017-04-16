@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H6M-hA-b7t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H6M-hA-b7t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -136,7 +136,13 @@
                             <constraint firstItem="BpM-S9-CRa" firstAttribute="top" secondItem="5tq-YR-1IC" secondAttribute="top" id="yhC-Hs-AQY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo Album" id="v8W-5a-Lyt"/>
+                    <navigationItem key="navigationItem" title="Photo Album" id="v8W-5a-Lyt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="h6j-Es-x78">
+                            <connections>
+                                <segue destination="npa-HO-XY8" kind="presentation" identifier="play" id="cjB-cH-aAN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="BpM-S9-CRa" id="pP3-3i-TAI"/>
                         <segue destination="jIR-fX-ibC" kind="show" identifier="showImage" id="Na8-pw-F4E"/>
@@ -179,6 +185,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pew-Ma-eCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2895" y="-227"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="koD-Vm-3EB">
+            <objects>
+                <viewController id="npa-HO-XY8" customClass="PlayerViewController" customModule="Example_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BPe-gl-Ey3"/>
+                        <viewControllerLayoutGuide type="bottom" id="9sF-3B-Kg3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xxE-rt-EcC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZS8-eU-LjN" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eem-SJ-BnA">
+                                <rect key="frame" x="316" y="40" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeButtonDidTap" destination="npa-HO-XY8" eventType="touchUpInside" id="IFB-Rj-nSC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eem-SJ-BnA" firstAttribute="top" secondItem="BPe-gl-Ey3" secondAttribute="bottom" constant="20" id="MP3-SR-ix2"/>
+                            <constraint firstItem="9sF-3B-Kg3" firstAttribute="top" secondItem="ZS8-eU-LjN" secondAttribute="bottom" id="VIG-rM-xyz"/>
+                            <constraint firstAttribute="trailing" secondItem="Eem-SJ-BnA" secondAttribute="trailing" constant="20" id="bfv-M0-14b"/>
+                            <constraint firstItem="ZS8-eU-LjN" firstAttribute="top" secondItem="xxE-rt-EcC" secondAttribute="top" id="ly6-t1-Vq2"/>
+                            <constraint firstAttribute="trailing" secondItem="ZS8-eU-LjN" secondAttribute="trailing" id="nqv-Mo-3zy"/>
+                            <constraint firstItem="ZS8-eU-LjN" firstAttribute="leading" secondItem="xxE-rt-EcC" secondAttribute="leading" id="q3T-Yw-5tn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="skView" destination="ZS8-eU-LjN" id="eRk-ya-uY0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbx-Jk-BcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1936.8" y="1188.7556221889056"/>
         </scene>
         <!--Live Photo-->
         <scene sceneID="iWu-VC-NOB">

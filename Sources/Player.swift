@@ -40,6 +40,7 @@ open class Player {
         self.setupScene()
     }
 
+    @discardableResult
     public func perform(action: Action) -> Bool {
         switch action {
         case .play:
@@ -129,7 +130,8 @@ private extension Player {
     }
     
     func addPresentation(_ presentation: Presentation) {
-        let performNow = self.presentationQueue.isEmpty
+        // FIXME: 自動でキューをまわすようになったら戻す
+        let performNow = true//self.presentationQueue.isEmpty
         self.presentationQueue.append(presentation)
         
         if performNow {
@@ -165,7 +167,7 @@ private extension Player {
             action: .disappear,
             node: presentation.photoNodeContext,
             in: self.sceneContext
-        ) { [ weak self] in
+        ) { [weak self] in
             self?.unloadPresent(presentation)
         }
     }

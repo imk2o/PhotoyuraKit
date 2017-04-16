@@ -49,6 +49,12 @@ class AlbumViewController: UIViewController {
             }
             
             livePhotoViewController.photo = self.photo(at: indexPath)
+        case "play"?:
+            guard let playerViewController = segue.destination as? PlayerViewController else {
+                break
+            }
+            
+            playerViewController.photoAlbum = self.photoAlbum
         default:
             break
         }

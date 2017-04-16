@@ -10,15 +10,17 @@ import UIKit
 import SpriteKit
 
 public struct PhotoTransitionContext {
-    let action: SKAction
+    public let action: SKAction
 }
 
 public protocol PhotoTransition {
+    static var identifier: String { get }
+
     var appearDuration: TimeInterval { get }
     var disappearDuration: TimeInterval { get }
     
-    func value(for key: String) -> Any?
-    func set(value: Any, for key: String)
+//    func value(for key: String) -> Any?
+//    func set(value: Any, for key: String)
     
     func appearTransition(photo: Photo, in: SceneContext) -> PhotoTransitionContext
     func disappearTransition(photo: Photo, in: SceneContext) -> PhotoTransitionContext
@@ -28,13 +30,13 @@ public protocol PhotoTransition {
 }
 
 public extension PhotoTransition {
-    public static var idenfifer: String {
+    public static var identifier: String {
         return String(describing: self)
     }
     
-    public func appearProgress(_: PhotoTransitionContext) {
+    public func appearProgress(context _: PhotoTransitionContext) {
     }
     
-    public func disappearProgress(_: PhotoTransitionContext) {
+    public func disappearProgress(context _: PhotoTransitionContext) {
     }
 }

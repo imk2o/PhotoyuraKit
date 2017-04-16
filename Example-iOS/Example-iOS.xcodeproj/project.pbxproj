@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B18756391EA2ECCC00D7A474 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18756381EA2ECCC00D7A474 /* PlayerViewController.swift */; };
 		B1D951551E6BB1D5006D1E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D951541E6BB1D5006D1E5B /* AppDelegate.swift */; };
 		B1D9515A1E6BB1D5006D1E5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D951581E6BB1D5006D1E5B /* Main.storyboard */; };
 		B1D9515C1E6BB1D5006D1E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D9515B1E6BB1D5006D1E5B /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B18756381EA2ECCC00D7A474 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		B1D951511E6BB1D5006D1E5B /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D951541E6BB1D5006D1E5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1D951591E6BB1D5006D1E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				B1D951A51E7CDD3F006D1E5B /* AlbumPhotoCell.swift */,
 				B1EFCFCE1E7D570A00C8708E /* ImageViewController.swift */,
 				B1EFCFD01E7D69EA00C8708E /* LivePhotoViewController.swift */,
+				B18756381EA2ECCC00D7A474 /* PlayerViewController.swift */,
 			);
 			path = "Example-iOS";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				B1D951A41E7CDC7B006D1E5B /* AlbumViewController.swift in Sources */,
 				B1D951A21E7CDB65006D1E5B /* LibraryViewController.swift in Sources */,
 				B1EFCFCF1E7D570A00C8708E /* ImageViewController.swift in Sources */,
+				B18756391EA2ECCC00D7A474 /* PlayerViewController.swift in Sources */,
 				B1EFCFD11E7D69EA00C8708E /* LivePhotoViewController.swift in Sources */,
 				B1D951A61E7CDD3F006D1E5B /* AlbumPhotoCell.swift in Sources */,
 				B1D951551E6BB1D5006D1E5B /* AppDelegate.swift in Sources */,

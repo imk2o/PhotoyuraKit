@@ -25,8 +25,9 @@ public class Scene: SKScene {
             return node
         }
         
-        func child(for scene: Scene) -> SKNode? {
-            return scene.childNode(withName: self.identifier)
+        func child(for scene: Scene, recursive: Bool) -> SKNode? {
+            let key = recursive ? ".//\(self.identifier)" : self.identifier
+            return scene.childNode(withName: key)
         }
     }
 
@@ -40,7 +41,7 @@ public class Scene: SKScene {
     }
 
     func node(_ node: Node) -> SKNode! {
-        return node.child(for: self)
+        return node.child(for: self, recursive: true)
     }
     
     private func setup() {

@@ -10,11 +10,11 @@ import UIKit
 
 open class PhotoAlbumStage: Stage {
     public let photoAlbum: PhotoAlbum
-    public let configuration: Configuration
+    public let direction: Direction
     
-    public init(photoAlbum: PhotoAlbum, configuration: Configuration) {
+    public init(photoAlbum: PhotoAlbum, direction: Direction) {
         self.photoAlbum = photoAlbum
-        self.configuration = configuration
+        self.direction = direction
     }
     
     // MARK: - Stage
@@ -38,9 +38,10 @@ open class PhotoAlbumStage: Stage {
         // FIXME
     }
     
-    // MARK: - Configuration
+    // MARK: - Direction
     
-    public struct Configuration {
-        
+    public struct Direction {
+        public init() {
+        }
     }
 }

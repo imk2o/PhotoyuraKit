@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B187563F1EA2F14D00D7A474 /* DissolvePhotoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187563E1EA2F14D00D7A474 /* DissolvePhotoTransition.swift */; };
+		B18756411EA2F3D500D7A474 /* VignettePhotoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18756401EA2F3D500D7A474 /* VignettePhotoFilter.swift */; };
 		B1D951101E6BA9B4006D1E5B /* PhotoyuraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D951061E6BA9B4006D1E5B /* PhotoyuraKit.framework */; };
 		B1D9512C1E6BAA53006D1E5B /* PhotoyuraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D951231E6BAA53006D1E5B /* PhotoyuraKit.framework */; };
 		B1D9513F1E6BAB5D006D1E5B /* PhotoyuraKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B1D9513D1E6BAB5D006D1E5B /* PhotoyuraKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B187563E1EA2F14D00D7A474 /* DissolvePhotoTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DissolvePhotoTransition.swift; path = Sources/DissolvePhotoTransition.swift; sourceTree = "<group>"; };
+		B18756401EA2F3D500D7A474 /* VignettePhotoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VignettePhotoFilter.swift; path = Sources/VignettePhotoFilter.swift; sourceTree = "<group>"; };
 		B1D951061E6BA9B4006D1E5B /* PhotoyuraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoyuraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D9510F1E6BA9B4006D1E5B /* PhotoyuraKitTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoyuraKitTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D951231E6BAA53006D1E5B /* PhotoyuraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoyuraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B187563D1EA2F10400D7A474 /* FX */ = {
+			isa = PBXGroup;
+			children = (
+				B187563E1EA2F14D00D7A474 /* DissolvePhotoTransition.swift */,
+				B18756401EA2F3D500D7A474 /* VignettePhotoFilter.swift */,
+			);
+			name = FX;
+			sourceTree = "<group>";
+		};
 		B1D950FA1E6BA906006D1E5B = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E551D91E829E980081676A /* Base */,
+				B187563D1EA2F10400D7A474 /* FX */,
 				B1E551DB1E829F1E0081676A /* PhotoAlbumScript.swift */,
 				B1E551DD1E829F3F0081676A /* PhotoPresenter.swift */,
 				B1E551DF1E829FE20081676A /* PhotoAlbumStage.swift */,
@@ -450,7 +464,9 @@
 				B1D951901E751345006D1E5B /* PhotoLibraryAuthorization.swift in Sources */,
 				B1E551CE1E8296EB0081676A /* Player.swift in Sources */,
 				B1D951841E750DF3006D1E5B /* PhotoAlbumContentsLoader.swift in Sources */,
+				B187563F1EA2F14D00D7A474 /* DissolvePhotoTransition.swift in Sources */,
 				B1E551E41E839B460081676A /* PhotoFilter.swift in Sources */,
+				B18756411EA2F3D500D7A474 /* VignettePhotoFilter.swift in Sources */,
 				B1E551E61E85436C0081676A /* PhotoNodeContext.swift in Sources */,
 				B1D951921E751848006D1E5B /* PhotoLibrary.swift in Sources */,
 				B1E551D01E8297140081676A /* Script.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 public struct PhotoFilterContext {
-    let filter: CIFilter
+    public let filter: CIFilter
 }
 
 public protocol PhotoFilter {
@@ -21,10 +21,10 @@ public protocol PhotoFilter {
 }
 
 public extension PhotoFilter {
-    public static var idenfifer: String {
+    public static var identifier: String {
         return String(describing: self)
     }
     
-    public func progress(_: PhotoFilterContext) {
+    public func progress(context _: PhotoFilterContext) {
     }
 }

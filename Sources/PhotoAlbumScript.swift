@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum PhotoAlbumScriptError: Error {
+public enum PhotoAlbumScriptError: Error {
     case photoAlbumLoadError(Error)
 }
 
 open class PhotoAlbumScript: Script {
-    typealias ResultHandler = (Result<PhotoAlbumScript, PhotoAlbumScriptError>) -> Void
+    public typealias ResultHandler = (Result<PhotoAlbumScript, PhotoAlbumScriptError>) -> Void
     
     public let photos: [Photo]
     public let photoAlbum: PhotoAlbum
@@ -26,7 +26,7 @@ open class PhotoAlbumScript: Script {
         self.configuration = configuration
     }
 
-    static func script(
+    public static func script(
         with photoAlbum: PhotoAlbum,
         configuration: Configuration,
         completion handler: @escaping ResultHandler)
@@ -50,7 +50,7 @@ open class PhotoAlbumScript: Script {
     open func stage() -> Stage {
         return PhotoAlbumStage(
             photoAlbum: self.photoAlbum,
-            configuration: self.configuration.stageConfiguration
+            direction: self.configuration.stageDirection
         )
     }
     
@@ -79,8 +79,17 @@ open class PhotoAlbumScript: Script {
     
     public struct Configuration {
         public let name: String
-        
         public let presenterDirection: PhotoPresenter.Direction
-        public let stageConfiguration: PhotoAlbumStage.Configuration	// FIXME: Direction
+        public let stageDirection: PhotoAlbumStage.Direction
+        
+        public init(
+            name: String,
+            presenterDirection: PhotoPresenter.Direction,
+            stageDirection: PhotoAlbumStage.Direction
+        ) {
+            self.name = name
+            self.presenterDirection = presenterDirection
+            self.stageDirection = stageDirection
+        }
     }
 }

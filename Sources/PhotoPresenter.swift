@@ -35,7 +35,11 @@ open class PhotoPresenter: Presenter {
     }
     
     open func load(to scene: SceneContext, completion handler: @escaping (Result<PhotoNodeContext, PresenterLoadError>) -> Void) -> Any? {
-        let options = SystemPhotoContentLoadOptions()	// FIXME
+        let options = SystemPhotoContentLoadOptions(	// FIXME
+            respondAs: .image,
+            imageTargetSize: CGSize(width: 400, height: 400),
+            imageContentMode: .aspectFill
+        )
         return self.photoContentLoader.load(with: options) { [weak self] (result) in
             switch result {
             case .success(let content):
@@ -78,8 +82,13 @@ open class PhotoPresenter: Presenter {
     // MARK: - Direction
     
     public struct Direction {
-        let transition: PhotoTransition
-        let filter: PhotoFilter
+        public let transition: PhotoTransition
+        public let filter: PhotoFilter
+        
+        public init(transition: PhotoTransition, filter: PhotoFilter) {
+            self.transition = transition
+            self.filter = filter
+        }
     }
 }
 
