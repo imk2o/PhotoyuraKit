@@ -29,9 +29,9 @@ class ImageViewController: UIViewController {
 private extension ImageViewController {
     func loadImage() {
         let loader = self.photo.loader()
-        let options = SystemPhotoContentLoadOptions(
-            respondAs: .image,
-            imageTargetSize: self.imageView.bounds.size,
+        let options = PhotoContentLoadOptions(
+            systemRespondAs: .image,
+            imagePreferredSize: self.imageView.bounds.size,
             imageContentMode: .aspectFit
         )
         

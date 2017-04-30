@@ -11,8 +11,24 @@ import AVFoundation
 import Photos
 
 /// 写真コンテンツの読み込みオプション。
-public protocol PhotoContentLoadOptions {
+public struct PhotoContentLoadOptions {
+    public enum ImageContentMode {
+        case aspectFit
+        case aspectFill
+    }
     
+    public var imagePreferredSize: CGSize
+    public var imageContentMode: ImageContentMode
+
+    public mutating func setExtra(value: Any, forKey key: AnyHashable) {
+        self.extra[key] = value
+    }
+    
+    public func extraValue(forKey key: AnyHashable) -> Any? {
+        return self.extra[key]
+    }
+    
+    var extra: [AnyHashable: Any] = [:]
 }
 
 /// 写真コンテンツの読み込みエラー。

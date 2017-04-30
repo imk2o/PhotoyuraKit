@@ -35,10 +35,10 @@ open class PhotoPresenter: Presenter {
     }
     
     open func load(to scene: SceneContext, completion handler: @escaping (Result<PhotoNodeContext, PresenterLoadError>) -> Void) -> Any? {
-        let options = SystemPhotoContentLoadOptions(	// FIXME
-            respondAs: .image,
-            imageTargetSize: CGSize(width: 400, height: 400),
-            imageContentMode: .aspectFill
+        let options = PhotoContentLoadOptions(
+            systemRespondAs: .image,
+            imagePreferredSize: scene.size,
+            imageContentMode: .aspectFit
         )
         return self.photoContentLoader.load(with: options) { [weak self] (result) in
             switch result {

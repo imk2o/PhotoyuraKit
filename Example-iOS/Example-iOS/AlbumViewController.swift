@@ -82,7 +82,7 @@ private extension AlbumViewController {
     
     func presentVideoPlayer(with photo: Photo) {
         let loader = photo.loader()
-        let options = SystemPhotoContentLoadOptions(respondAs: .video)
+        let options = PhotoContentLoadOptions(systemRespondAs: .video)
         loader.load(with: options) { [weak self] (result) in
             switch result {
             case .success(let content):

@@ -43,8 +43,8 @@ class LivePhotoViewController: UIViewController {
 private extension LivePhotoViewController {
     func loadLivePhoto() {
         let loader = self.photo.loader()
-        let options = SystemPhotoContentLoadOptions(
-            imageTargetSize: self.livePhotoView.bounds.size,
+        let options = PhotoContentLoadOptions(
+            imagePreferredSize: self.livePhotoView.bounds.size,
             imageContentMode: .aspectFit
         )
         

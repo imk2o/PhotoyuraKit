@@ -20,9 +20,9 @@ class AlbumPhotoCell: UICollectionViewCell {
     func configure(with photo: Photo) {
         
         let loader = photo.loader()
-        let options = SystemPhotoContentLoadOptions(
-            respondAs: .image,
-            imageTargetSize: CGSize(width: 100, height: 100),
+        let options = PhotoContentLoadOptions(
+            systemRespondAs: .image,
+            imagePreferredSize: CGSize(width: 100, height: 100),
             imageContentMode: .aspectFill
         )
         loader.load(with: options) { [weak self] (result) in

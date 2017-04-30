@@ -9,44 +9,39 @@
 import UIKit
 import Photos
 
-public struct SystemPhotoContentLoadOptions: PhotoContentLoadOptions {
-    public enum RespondAs {
+public extension PhotoContentLoadOptions {
+    public enum SystemRespondAs {
         case original
         case image
         case video
     }
-    public var respondAs: RespondAs
     
-    public init(
-        respondAs: RespondAs = .original,
-        imageTargetSize: CGSize = .zero,
-        imageContentMode: ImageContentMode = .aspectFit
-    ) {
-        self.respondAs = respondAs
-        self.imageTargetSize = imageTargetSize
-        self.imageContentMode = imageContentMode
+    enum SystemExtraKey: String {
+        case respondAs
     }
     
-    public var imageTargetSize: CGSize
-    
-    public enum ImageContentMode {
-        case aspectFit
-        case aspectFill
-        
-        var phImageContentMode: PHImageContentMode {
-            switch self {
-            case .aspectFill:
-                return .aspectFill
-            case .aspectFit:
-                return .aspectFit
-            }
+    public var systemRespondAs: SystemRespondAs {
+        get {
+            return (self.extra[SystemExtraKey.respondAs] as? SystemRespondAs) ?? .original
+        } set {
+            self.extra[SystemExtraKey.respondAs] = newValue
         }
     }
-    public var imageContentMode: ImageContentMode
+    
+    public init(
+        systemRespondAs: SystemRespondAs = .original,
+        imagePreferredSize: CGSize = .zero,
+        imageContentMode: ImageContentMode = .aspectFit
+    ) {
+        self.imagePreferredSize = imagePreferredSize
+        self.imageContentMode = imageContentMode
+
+        self.systemRespondAs = systemRespondAs
+    }
     
     var phImageRequestOptions: PHImageRequestOptions {
         let options = PHImageRequestOptions()
-        // FIXME
+
         options.isNetworkAccessAllowed = true
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .exact
@@ -56,22 +51,32 @@ public struct SystemPhotoContentLoadOptions: PhotoContentLoadOptions {
     
     var phVideoRequestOptions: PHVideoRequestOptions {
         let options = PHVideoRequestOptions()
-        // FIXME
-        options.isNetworkAccessAllowed = true
-        options.deliveryMode = .highQualityFormat
 
-        return options
-    }
-    
-    var phLivePhotoRequestOptions: PHLivePhotoRequestOptions {
-        let options = PHLivePhotoRequestOptions()
-        // FIXME
         options.isNetworkAccessAllowed = true
         options.deliveryMode = .highQualityFormat
         
         return options
     }
+    
+    var phLivePhotoRequestOptions: PHLivePhotoRequestOptions {
+        let options = PHLivePhotoRequestOptions()
 
+        options.isNetworkAccessAllowed = true
+        options.deliveryMode = .highQualityFormat
+        
+        return options
+    }
+}
+
+public extension PhotoContentLoadOptions.ImageContentMode {
+    var phImageContentMode: PHImageContentMode {
+        switch self {
+        case .aspectFill:
+            return .aspectFill
+        case .aspectFit:
+            return .aspectFit
+        }
+    }
 }
 
 struct SystemPhotoContentLoader: PhotoContentLoader {
@@ -93,11 +98,7 @@ struct SystemPhotoContentLoader: PhotoContentLoader {
         with options: PhotoContentLoadOptions,
         completion handler: @escaping (Result<PhotoContent, PhotoContentLoadError>) -> Void
     ) -> PhotoContentLoader.RequestID {
-        guard let options = options as? SystemPhotoContentLoadOptions else {
-            fatalError()		// FIXME
-        }
-        
-        switch options.respondAs {
+        switch options.systemRespondAs {
         case .original:
             switch self.photo.photoType {
             case .image:
@@ -130,12 +131,12 @@ struct SystemPhotoContentLoader: PhotoContentLoader {
     }
     
     private func loadImage(
-        with options: SystemPhotoContentLoadOptions,
+        with options: PhotoContentLoadOptions,
         completion handler: @escaping (Result<PhotoContent, PhotoContentLoadError>) -> Void
     ) -> Any {
         return self.sharedImageManager.requestImage(
             for: self.photo.asset,
-            targetSize: options.imageTargetSize,
+            targetSize: options.imagePreferredSize,
             contentMode: options.imageContentMode.phImageContentMode,
             options: options.phImageRequestOptions
         ) { (image, info) in
@@ -159,7 +160,7 @@ struct SystemPhotoContentLoader: PhotoContentLoader {
     }
     
     private func loadVideo(
-        with options: SystemPhotoContentLoadOptions,
+        with options: PhotoContentLoadOptions,
         completion handler: @escaping (Result<PhotoContent, PhotoContentLoadError>) -> Void
     ) -> Any {
         return self.sharedImageManager.requestAVAsset(
@@ -179,19 +180,19 @@ struct SystemPhotoContentLoader: PhotoContentLoader {
     }
     
     private func loadLivePhoto(
-        with options: SystemPhotoContentLoadOptions,
+        with options: PhotoContentLoadOptions,
         completion handler: @escaping (Result<PhotoContent, PhotoContentLoadError>) -> Void
     ) -> Any {
         return self.sharedImageManager.requestLivePhoto(
             for: self.photo.asset,
-            targetSize: options.imageTargetSize,
+            targetSize: options.imagePreferredSize,
             contentMode: options.imageContentMode.phImageContentMode,
             options: options.phLivePhotoRequestOptions
         ) { (livePhoto, info) in
             if let livePhoto = livePhoto {
                 if
                     let videoAsset = livePhoto.value(forKey: "videoAsset") as? AVAsset,
-                    options.respondAs == .video
+                    options.systemRespondAs == .video
                 {
                     // 動画として返す
                     handler(.success(.video(videoAsset)))
