@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B176C79A1EB5C2CA004A4625 /* StageNodeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C7991EB5C2CA004A4625 /* StageNodeContext.swift */; };
 		B187563F1EA2F14D00D7A474 /* DissolvePhotoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187563E1EA2F14D00D7A474 /* DissolvePhotoTransition.swift */; };
 		B18756411EA2F3D500D7A474 /* VignettePhotoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18756401EA2F3D500D7A474 /* VignettePhotoFilter.swift */; };
 		B1D951101E6BA9B4006D1E5B /* PhotoyuraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D951061E6BA9B4006D1E5B /* PhotoyuraKit.framework */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B176C7991EB5C2CA004A4625 /* StageNodeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StageNodeContext.swift; path = Sources/StageNodeContext.swift; sourceTree = "<group>"; };
 		B187563E1EA2F14D00D7A474 /* DissolvePhotoTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DissolvePhotoTransition.swift; path = Sources/DissolvePhotoTransition.swift; sourceTree = "<group>"; };
 		B18756401EA2F3D500D7A474 /* VignettePhotoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VignettePhotoFilter.swift; path = Sources/VignettePhotoFilter.swift; sourceTree = "<group>"; };
 		B1D951061E6BA9B4006D1E5B /* PhotoyuraKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoyuraKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +255,7 @@
 				B1E551D71E829D760081676A /* Time.swift */,
 				B1E551E51E85436C0081676A /* PhotoNodeContext.swift */,
 				B1E551E71E8544880081676A /* SceneContext.swift */,
+				B176C7991EB5C2CA004A4625 /* StageNodeContext.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				B1D9519D1E752BE4006D1E5B /* SystemPhotoContentLoader.swift in Sources */,
 				B1E551DE1E829F3F0081676A /* PhotoPresenter.swift in Sources */,
 				B1D951971E752150006D1E5B /* SystemPhotoLibraryAuthorization.swift in Sources */,
+				B176C79A1EB5C2CA004A4625 /* StageNodeContext.swift in Sources */,
 				B1E551E01E829FE20081676A /* PhotoAlbumStage.swift in Sources */,
 				B1E551D81E829D760081676A /* Time.swift in Sources */,
 				B1D951901E751345006D1E5B /* PhotoLibraryAuthorization.swift in Sources */,

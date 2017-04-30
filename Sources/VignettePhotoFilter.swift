@@ -22,7 +22,7 @@ public struct VignettePhotoFilter: PhotoFilter {
         let filter = CIFilter(
             name: "CIVignette",
             withInputParameters: [
-                "inputIntensity": self.intensity
+                kCIInputIntensityKey: self.intensity
             ]
         )!
 

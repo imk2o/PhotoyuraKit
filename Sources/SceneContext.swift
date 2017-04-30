@@ -10,13 +10,13 @@ import UIKit
 import SpriteKit
 
 public struct SceneContext {
-    let scene: Scene
+    let body: Scene
     
     public var size: CGSize {
-        return self.scene.size
+        return self.body.size
     }
     
     func node(_ node: Scene.Node) -> SKNode {
-        return self.scene.node(node)
+        return self.body.node(node)
     }
 }

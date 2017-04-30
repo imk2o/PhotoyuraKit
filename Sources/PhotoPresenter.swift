@@ -28,7 +28,7 @@ open class PhotoPresenter: Presenter {
         case .appear:
             return self.direction.transition.appearDuration
         case .play:
-            return 5.0		// FIXME
+            return self.direction.duration
         case .disappear:
             return self.direction.transition.disappearDuration
         }
@@ -82,10 +82,16 @@ open class PhotoPresenter: Presenter {
     // MARK: - Direction
     
     public struct Direction {
+        public let duration: TimeInterval
         public let transition: PhotoTransition
         public let filter: PhotoFilter
         
-        public init(transition: PhotoTransition, filter: PhotoFilter) {
+        public init(
+            duration: TimeInterval,
+            transition: PhotoTransition,
+            filter: PhotoFilter
+        ) {
+            self.duration = duration
             self.transition = transition
             self.filter = filter
         }

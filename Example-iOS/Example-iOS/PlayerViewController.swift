@@ -24,10 +24,13 @@ class PlayerViewController: UIViewController {
         let configuration = PhotoAlbumScript.Configuration(
             name: "example",
             presenterDirection: PhotoPresenter.Direction(
+                duration: 3.0,
                 transition: DissolvePhotoTransition(),
                 filter: VignettePhotoFilter()
             ),
-            stageDirection: PhotoAlbumStage.Direction()
+            stageDirection: PhotoAlbumStage.Direction(
+                background: .color(UIColor.gray)
+            )
         )
 
         PhotoAlbumScript.script(

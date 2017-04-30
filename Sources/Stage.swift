@@ -15,8 +15,8 @@ public enum StageLoadError: Error {
 
 public protocol Stage {
     // FIXME: PresenterのようにContextを介するように
-    func load(to: Scene, completion handler: @escaping (Result<Void, StageLoadError>) -> Void) -> Any?
+    func load(to: SceneContext, completion handler: @escaping (Result<StageNodeContext, StageLoadError>) -> Void) -> Any?
     func cancel(identifier: Any)
-    func present(in: Scene, time: Time)
-    func unload(from: Scene)
+    func present(context: StageNodeContext)
+    func unload(context: StageNodeContext)
 }

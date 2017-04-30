@@ -60,6 +60,7 @@ open class Player {
         let photoNodeContext: PhotoNodeContext
     }
     fileprivate var presentationQueue: [Presentation] = []
+    fileprivate var stageNodeContext: StageNodeContext?
 }
 
 private extension Player {
@@ -68,7 +69,7 @@ private extension Player {
             fatalError()
         }
         
-        return SceneContext(scene: scene)
+        return SceneContext(body: scene)
     }
     
     func setupScene() {
@@ -81,10 +82,20 @@ private extension Player {
         view.presentScene(scene)
     }
     
+    @discardableResult
     func play() -> Bool {
-        return self.next()
+        self.prepareStage { [weak self] (isSuccess) in
+            if isSuccess {
+                self?.next()
+            } else {
+                // FIXME: halt
+            }
+        }
+
+        return true
     }
     
+    @discardableResult
     func next() -> Bool {
         self.unloadToDequeue()
         
@@ -98,6 +109,19 @@ private extension Player {
 //        self.currentPresenter = nextPresenter
         
         return true
+    }
+    
+    func prepareStage(completion handler: @escaping (Bool) -> Void) {
+        self.script.stage().load(to: self.sceneContext) { [weak self] (result) in
+            switch result {
+            case .success(let stageNodeContext):
+                self?.stageNodeContext = stageNodeContext
+                handler(true)
+            case .failure(let error):
+                print(error)	// FIXME
+                handler(false)
+            }
+        }
     }
     
     func loadToEnqueue(presenter: Presenter) {

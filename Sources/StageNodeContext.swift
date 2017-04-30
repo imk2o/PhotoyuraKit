@@ -1,19 +1,19 @@
 //
-//  PhotoNodeContext.swift
+//  StageNodeContext.swift
 //  PhotoyuraKit
 //
-//  Created by k2o on 2017/03/24.
+//  Created by k2o on 2017/04/30.
 //
 //
 
 import UIKit
 import SpriteKit
 
-public struct PhotoNodeContext {
-    public let node: SKNode
+public struct StageNodeContext {
+    public let bodyScene: SKScene
     
     var scene: SceneContext {
-        guard let scene = self.node.scene as? Scene else {
+        guard let scene = self.bodyScene as? Scene else {
             fatalError("Node is not a child of the Scene.")
         }
         

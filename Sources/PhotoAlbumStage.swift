@@ -19,29 +19,46 @@ open class PhotoAlbumStage: Stage {
     
     // MARK: - Stage
     
-    open func load(to: Scene, completion handler: @escaping (Result<Void, StageLoadError>) -> Void) -> Any? {
+    @discardableResult
+    open func load(
+        to scene: SceneContext,
+        completion handler: @escaping (Result<StageNodeContext, StageLoadError>) -> Void
+    ) -> Any? {
 
-        // FIXME
-        
-        return nil
+        switch self.direction.background {
+        case .color(let color):
+            scene.body.backgroundColor = color
+            handler(.success(StageNodeContext(bodyScene: scene.body)))
+            return nil
+        // TODO: 背景テクスチャの読み込みなど
+        }
     }
     
     open func cancel(identifier: Any) {
         // FIXME
     }
     
-    open func present(in: Scene, time: Time) {
+    open func present(context: StageNodeContext) {
         // FIXME
     }
     
-    open func unload(from: Scene) {
+    open func unload(context: StageNodeContext) {
         // FIXME
     }
     
     // MARK: - Direction
     
     public struct Direction {
-        public init() {
+        public enum Background {
+            case color(UIColor)
+        }
+        
+        public let background: Background
+        
+        public init(
+            background: Background
+        ) {
+            self.background = background
         }
     }
 }
